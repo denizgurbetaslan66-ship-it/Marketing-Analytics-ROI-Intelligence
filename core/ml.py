@@ -1,12 +1,11 @@
+import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
-import numpy as np
-import pandas as pd
 
-def train_roas_model(df):
+def train_model(df):
     """
-    Geçmiş verileri kullanarak ROAS tahminlemesi yapan Random Forest modelini eğitir.
+    Geçmiş kampanya verilerini kullanarak ROAS tahmini için Random Forest modelini eğitir.
     """
     X = df[['Gosterim', 'Tiklama', 'Harcama_TL', 'Donusum']]
     y = df['ROAS']
@@ -18,13 +17,10 @@ def train_roas_model(df):
     
     return model
 
-def evaluate_model(model, df):
-    X = df[['Gosterim', 'Tiklama', 'Harcama_TL', 'Donusum']]
-    y = df['ROAS']
-    _, X_test, _, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    y_pred = model.predict(X_test)
-    r2 = r2_score(y_test, y_pred)
-    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-    
-    return r2, rmse
+def predict_roas(model, gosterim, tiklama, harcama, donusum):
+    """
+    Yeni girilen kampanya parametrelerine göre tahmini ROAS değeri üretir.
+    """
+    yeni_veri = pd.DataFrame([[gosterim, tiklama, harcama, donusum]], columns=['Gosterim', 'Tiklama', 'Harcama_TL', 'Donusum'])
+    tahmin = model.predict(yeni_veri)
+    return tahmin[0]
