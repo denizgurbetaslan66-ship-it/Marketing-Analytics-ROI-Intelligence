@@ -1,4 +1,4 @@
-# 📈 Marketing Analytics & Campaign Intelligence
+#  Marketing Analytics & Campaign Intelligence
 
 Dijital pazarlama kampanyalarını ölçümleyen, bütçe senaryoları simüle eden ve makine öğrenmesiyle ROAS tahmini yapan interaktif bir **Streamlit** dashboard'u.
 
@@ -6,7 +6,7 @@ Dijital pazarlama kampanyalarını ölçümleyen, bütçe senaryoları simüle e
 
 > 📸 Ekran görüntüsünü `docs/screenshot.png` olarak ekleyip buraya bağlayabilirsiniz: `![Dashboard](docs/screenshot.png)`
 
-## ✨ Özellikler
+##  Özellikler
 
 - **Genel Bakış:** Gelir, Harcama, ROAS/ROI ve Dönüşüm Oranı kartları; önceki döneme göre **gerçek** değişim oranları
 - **Etkileşim grafiği:** Haftalık, kampanya bazlı CTR trendi
@@ -19,20 +19,8 @@ Dijital pazarlama kampanyalarını ölçümleyen, bütçe senaryoları simüle e
 - **Kendi verinizi yükleyin:** CSV yükleme, doğrulama ve temizleme
 - Arama kutusu, çoklu filtreler (kampanya / kanal / içerik türü), dönem seçici
 
-## 🚀 Kurulum
 
-```bash
-git clone https://github.com/<kullanici-adi>/marketing-analytics.git
-cd marketing-analytics
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-Uygulama `http://localhost:8501` adresinde açılır.
-
-## 📁 Proje Yapısı
+##  Proje Yapısı
 
 ```
 marketing-analytics/
@@ -47,7 +35,7 @@ marketing-analytics/
 └── requirements.txt
 ```
 
-## 📊 Kendi Verinizi Kullanma
+##  Kendi Verinizi Kullanma
 
 Kenar çubuğundan bir CSV yükleyin. Gerekli sütunlar (örnek: `data/sample_campaigns.csv`):
 
@@ -58,13 +46,13 @@ Kenar çubuğundan bir CSV yükleyin. Gerekli sütunlar (örnek: `data/sample_ca
 | `Gosterim`, `Tiklama`, `Donusum` | Sayısal huni metrikleri |
 | `Harcama_TL`, `Gelir_TL` | Para değerleri (TL) |
 
-## 🧮 Metrik Tanımları
+##  Metrik Tanımları
 
 Tüm oranlar satır ortalaması yerine **toplamlardan** hesaplanır (ağırlıklı, doğru sonuç):
 
 `CTR = Tıklama / Gösterim` · `CPA = Harcama / Dönüşüm` · `ROAS = Gelir / Harcama` · `Dönüşüm Oranı = Dönüşüm / Tıklama` · `RPM = Gelir / Gösterim × 1000` · `AOV = Gelir / Dönüşüm`
 
-## ⚠️ Not
+##  Not
 
 Varsayılan veri **sentetik (demo)** veridir. ML modeli ve simülasyon sonuçları gerçek karar süreçleri için değil, gösterim amaçlıdır; gerçek veriyle yeniden değerlendirilmelidir.
 
@@ -73,12 +61,3 @@ Varsayılan veri **sentetik (demo)** veridir. ML modeli ve simülasyon sonuçlar
 1. Projeyi GitHub'a yükleyin
 2. [share.streamlit.io](https://share.streamlit.io) → *New app* → repo ve `app.py` seçin → *Deploy*
 
-## 🧪 Test
-
-```bash
-python test_app.py
-```
-
-## 📄 Lisans
-
-MIT — bkz. [LICENSE](LICENSE)
