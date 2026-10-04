@@ -61,3 +61,12 @@ Varsayılan veri **sentetik (demo)** veridir. ML modeli ve simülasyon sonuçlar
 1. Projeyi GitHub'a yükleyin
 2. [share.streamlit.io](https://share.streamlit.io) → *New app* → repo ve `app.py` seçin → *Deploy*
 
+SİSTEM GÖRSELLERİ:
+<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/f2fa545a-92f9-4228-8abe-bd0324e7fa60" />
+<img width="1917" height="908" alt="image" src="https://github.com/user-attachments/assets/fc44dc52-d1f3-4dc3-8d8b-a123fbb192c2" />
+<img width="1917" height="907" alt="image" src="https://github.com/user-attachments/assets/04316618-bec1-4365-a86e-559742b24839" />
+<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/d3118d73-2561-48a7-9281-fea4347a8e36" />
+
+
+
+
