@@ -35,13 +35,25 @@ def add_metrics(df):
     df['RPM'] = (df['Gelir_TL'] / df['Gosterim']) * 1000
     return df
 
-def sum_totals(df):
-    return {
-        'toplam_gelir': df['Gelir_TL'].sum(),
-        'toplam_harcama': df['Harcama_TL'].sum(),
-        'ortalama_roas': df['Gelir_TL'].sum() / df['Harcama_TL'].sum() if df['Harcama_TL'].sum() > 0 else 0,
-        'ortalama_donusum_orani': df['Donusum_Orani'].mean()
-    }
+def totals(df):
+    toplam_gelir = df['Gelir_TL'].sum()
+    toplam_harcama = df['Harcama_TL'].sum()
+    ortalama_roas = toplam_gelir / toplam_harcama if toplam_harcama > 0 else 0
+    ortalama_donusum_orani = df['Donusum_Orani'].mean()
+    return toplam_gelir, toplam_harcama, ortalama_roas, ortalama_donusum_orani
+
+def summarize(df, group_by_col='Kampanya'):
+    return df.groupby(group_by_col).agg({
+        'Gosterim': 'sum',
+        'Tiklama': 'sum',
+        'Harcama_TL': 'sum',
+        'Gelir_TL': 'sum',
+        'Donusum': 'sum',
+        'CPA': 'mean',
+        'RPM': 'mean',
+        'CTR_Yuzde': 'mean',
+        'ROAS': 'mean'
+    }).reset_index()
 
 def validate_upload(df):
     missing = [col for col in REQUIRED_COLS if col not in df.columns]
